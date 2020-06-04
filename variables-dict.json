@@ -1,0 +1,47 @@
+{
+	"public": {
+		"可用区": "availability_zone",
+		"项目ID": "project_id"
+	},
+	"compute": {
+		"实例名称": "name",
+		"实例类型": "type",
+		"内存大小": "mem_size",
+		"创建时间": "create_time",
+		"过期时间": "expired_time",
+		"实例状态": "status",
+		"镜像ID": "image_id",
+		"标签": "tags"
+	},
+	"storage": {
+		"系统盘类型": "system_disk_type",
+		"系统盘大小": "system_disk_size",
+		"数据盘": {
+			"数据盘类型": "disk_type",
+			"数据盘大小": "disk_size"
+		}
+	},
+	"network": {
+		"端口": "port",
+		"安全组": "security_groups",
+		"VPC IP地址": "ip",
+		"VPC ID": "vpc_id",
+		"子网ID": "subnet_id",
+		"公网IP": "public_ip_assigned"
+	},
+	"payment": {
+		"付费类型": {
+			"charge_type": [
+				"POSTPAID",
+				"PREPAID"
+			]
+		},
+		"预付费周期": "prepaid_period",
+		"强制删除": "force_delete"
+	},
+	"login": {
+		"密码": "password",
+		"用户数据": "user_data",
+		"秘钥名称": "key_name"
+	}
+}
