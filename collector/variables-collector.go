@@ -1,4 +1,4 @@
-package main
+package collector
 
 import (
 	"encoding/json"
@@ -49,7 +49,7 @@ func write2file(content []byte, filepath string) (err error) {
 	return nil
 }
 
-func main() {
+func Run() {
 	provider := cloud.Provider().(*schema.Provider)
 	fmt.Println("==== collecting datasource config ====")
 	datasourceCount, datasourceJson, err := sourceConfigGet(&provider.DataSourcesMap)
