@@ -1,0 +1,63 @@
+package tencentcloud
+
+const (
+	TKE_CLUSTER_OS_CENTOS72 = "centos7.2x86_64"
+	TKE_CLUSTER_OS_CENTOS76 = "centos7.6x86_64"
+	TKE_CLUSTER_OS_UBUNTU16 = "ubuntu16.04.1 LTSx86_64"
+	TKE_CLUSTER_OS_UBUNTU18 = "ubuntu18.04.1 LTSx86_64"
+)
+
+var TKE_CLUSTER_OS = []string{TKE_CLUSTER_OS_CENTOS72, TKE_CLUSTER_OS_CENTOS76, TKE_CLUSTER_OS_UBUNTU16, TKE_CLUSTER_OS_UBUNTU18}
+
+var tkeClusterOsMap = map[string]string{TKE_CLUSTER_OS_CENTOS72: TKE_CLUSTER_OS_CENTOS72,
+	TKE_CLUSTER_OS_CENTOS76: "centos7.6.0_x64",
+	TKE_CLUSTER_OS_UBUNTU16: TKE_CLUSTER_OS_UBUNTU16,
+	TKE_CLUSTER_OS_UBUNTU18: "ubuntu18.04.1x86_64",
+}
+
+func tkeToShowClusterOs(apiOs string) string {
+	for showName, apiName := range tkeClusterOsMap {
+		if apiName == apiOs {
+			return showName
+		}
+	}
+	return "unknown"
+}
+
+const (
+	TKE_DEPLOY_TYPE_MANAGED     = "MANAGED_CLUSTER"
+	TKE_DEPLOY_TYPE_INDEPENDENT = "INDEPENDENT_CLUSTER"
+)
+
+var TKE_DEPLOY_TYPES = []string{TKE_DEPLOY_TYPE_MANAGED, TKE_DEPLOY_TYPE_INDEPENDENT}
+
+const (
+	TKE_RUNTIME_DOCKER     = "docker"
+	TKE_RUNTIME_CONTAINERD = "containerd"
+)
+
+var TKE_RUNTIMES = []string{TKE_RUNTIME_DOCKER, TKE_RUNTIME_CONTAINERD}
+
+const (
+	TKE_ROLE_MASTER_ETCD = "MASTER_ETCD"
+	TKE_ROLE_WORKER      = "WORKER"
+)
+
+var TKE_INSTANCE_CHARGE_TYPE = []string{CVM_CHARGE_TYPE_PREPAID, CVM_CHARGE_TYPE_POSTPAID}
+
+const (
+	TKE_CLUSTER_OS_TYPE_DOCKER_CUSTOMIZE = "DOCKER_CUSTOMIZE"
+	TKE_CLUSTER_OS_TYPE_GENERAL          = "GENERAL"
+)
+
+var TKE_CLUSTER_OS_TYPES = []string{TKE_CLUSTER_OS_TYPE_DOCKER_CUSTOMIZE, TKE_CLUSTER_OS_TYPE_GENERAL}
+
+const (
+	TkeInternetStatusCreating      = "Creating"
+	TkeInternetStatusCreateFailed  = "CreateFailed"
+	TkeInternetStatusCreated       = "Created"
+	TkeInternetStatusDeleting      = "Deleting"
+	TkeInternetStatusDeleted       = "Deleted"
+	TkeInternetStatusDeletedFailed = "DeletedFailed"
+	TkeInternetStatusNotfound      = "NotFound"
+)

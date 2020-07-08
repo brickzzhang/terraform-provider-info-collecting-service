@@ -21,7 +21,7 @@ curl http://127.0.0.1:10001/QueryName -d '{"QueryKey":"vpc"}'
 ```
 
 ## Note:
-1. Current tencentcloud provider version: `v1.36.1`
+1. Current tencentcloud provider version: `v1.38.2`
 2. For the query function, it's case insensitive. But it only supports single word. 
 For example, if you want to query `force_delete`, both `{"QueryKey":"force"}` and 
 `{"QueryKey":"delete"}` are ok, but can't specify `{"QueryKey":"force_delete"}`.
